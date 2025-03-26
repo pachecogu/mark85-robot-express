@@ -25,8 +25,11 @@ Configuração do Ambiente
    - Abra o terminal Git Bash no seu computador.
 
 2. CRIAR E ACESSAR O DIRETÓRIO
+
    Execute os comandos:
+
    mkdir -p /c/QAx/projects/
+
    cd /c/QAx/projects/
 
 3. CLONAR O REPOSITÓRIO
