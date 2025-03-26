@@ -26,11 +26,9 @@ Configuração do Ambiente
 
 2. CRIAR E ACESSAR O DIRETÓRIO
 
-   Execute os comandos:
-
-   mkdir -p /c/QAx/projects/
-
-   cd /c/QAx/projects/
+   - Execute os comandos:
+      - mkdir -p /c/QAx/projects/
+      - cd /c/QAx/projects/
 
 3. CLONAR O REPOSITÓRIO
    Execute o comando:
