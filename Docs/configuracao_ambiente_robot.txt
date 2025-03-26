@@ -1,0 +1,120 @@
+MANUAL COMPLETO DE CONFIGURAÇÃO DO AMBIENTE ROBOT FRAMEWORK (TXT)
+=============================================================
+
+1. INSTALAÇÃO DAS FERRAMENTAS BÁSICAS
+-------------------------------------
+
+1.1 Git for Windows:
+- Acesse: https://git-scm.com/download/win
+- Execute o instalador
+- Marque as opções:
+  [X] Git from the command line
+  [X] Unix tools in PATH
+  [X] Checkout as-is, commit Unix-style
+
+1.2 Python 3.8+:
+- Download: https://www.python.org/downloads/
+- Instale com:
+  [X] Add Python to PATH
+  [X] Install pip
+  [X] Create shortcuts
+
+2. CONFIGURAÇÃO DO AMBIENTE
+---------------------------
+
+2.1 Estrutura de pastas:
+mkdir c:\QA
+mkdir c:\QA\projects
+mkdir c:\QA\apps
+
+2.2 Clone do repositório:
+cd c:\QA\projects
+git clone [URL_DO_PROJETO]
+
+3. INSTALAÇÃO DAS BIBLIOTECAS
+-----------------------------
+
+3.1 Pacotes essenciais:
+pip install robotframework
+pip install robotframework-browser
+pip install webdrivermanager
+
+3.2 Configuração do Browser:
+webdrivermanager chrome
+rfbrowser init
+
+4. CONFIGURAÇÃO DO VSCODE
+-------------------------
+
+4.1 Instalação:
+- Baixe em: https://code.visualstudio.com/
+- Instale com configurações padrão
+
+4.2 Extensões necessárias:
+- Robot Framework Language Server
+- Python (Microsoft)
+- GitLens
+
+5. CONFIGURAÇÃO DO PATH
+-----------------------
+
+5.1 Adicione ao PATH do Windows:
+C:\Python38\Scripts\
+
+5.2 Como configurar:
+- Botão direito em "Este Computador" > Propriedades
+- Configurações avançadas > Variáveis de Ambiente
+- Edite a variável PATH do sistema
+- Adicione o novo caminho
+
+6. VERIFICAÇÃO FINAL
+--------------------
+
+6.1 Teste as instalações:
+robot --version
+python --version
+git --version
+
+6.2 Execute um teste simples:
+cd c:/QAx/projects/mark85-robot-express/tests
+robot -d ./logs ./tests/login.robot
+
+7. TROUBLESHOOTING
+------------------
+
+7.1 Erros comuns:
+- "Command not found": Verifique o PATH e reinicie o terminal
+- Falha no Browser: Execute "rfbrowser init" novamente
+- Erros de pip: Execute "python -m pip install --upgrade pip"
+
+8. ESTRUTURA DO PROJETO
+-----------------------
+C:\QAx\projects\mark85-robot-express
+│
+├── tests\                   # Suites de teste
+│   └── tasks\               # Casos de teste para gerenciamento de tarefas
+│
+├── Docs\                    # Documentação técnica
+│
+└── resources\               # Recursos do framework
+    ├── fixtures\            # Arquivos de massa de teste
+    ├── keywords\            # Keywords customizadas
+    ├── libs\                # Bibliotecas de apoio
+    └── pages\               # Page Objects
+        └── components\      # Componentes compartilhados
+
+10. DICIONÁRIO DE TAGS
+------------------
+
+10.1 - Para que servem as tags
+Tags são etiquetas que classificam testes para:
+
+  -Filtrar execuções (ex: só testes criticos)
+  -Organizar por funcionalidade (ex: login, tarefas)
+  -Priorizar (ex: smoke para testes rápidos)
+
+10.2 - Dicionário de tags
+É possível obter mais detalhes e consultar o dicionário de tags em:
+C:\QAx\projects\mark85-robot-express\Docs\dicionario_tags.txt
+
+=============================================================

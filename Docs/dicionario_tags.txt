@@ -1,0 +1,54 @@
+MANUAL COMPLETO DE TAGS PARA TESTES AUTOMATIZADOS
+================================================
+
+1. TAGS DE CRITICIDADE
+----------------------
+
+- critico:    Testes essenciais (falha = bloqueante)
+- alta:       Funcionalidades importantes, mas não bloqueantes
+- media:      Casos menos críticos
+- baixa:      Pequenas validações ou corner cases
+
+2. TAGS DE PROPÓSITO
+--------------------
+
+- smoke:         Validação rápida pós-deploy
+- regressao:     Testes para garantir que alterações não quebraram funcionalidades existentes
+- iniciarSessao: Relacionado ao fluxo de inicialização da sessão
+- tituloPagina:  Relacionado à verificação do título da página
+
+3. TAGS ADICIONAIS
+------------------
+
+3.1 - Autenticação:
+- fazerLogin:           Testes de login
+- autenticacaoSucesso:  Login com sucesso
+- autenticacaoFalha:    Login com erro
+
+3.2 - Tarefas:
+- criacao_tarefa:   Criação de tarefas
+- remocao_tarefa:   Exclusão de tarefas
+- duplicidade:      Testes de itens duplicados
+- limites_sistema:  Testes de limites do sistema
+
+4. COMO USAR AS TAGS
+--------------------
+
+4.1 - Exemplos básicos:
+$ robot -i critico tests/
+$ robot -i regressaoANDalta tests/
+
+4.2 - Combinações úteis:
+- Verificação pós-deploy: robot -i smoke tests/
+- Testes completos de login: robot -i iniciarSessaoORfazerLogin tests/
+- Validação de títulos: robot -i tituloPagina tests/
+
+5. LEGENDA COMPLETA
+-------------------
+[Prioridade]
+critico > alta > media > baixa
+
+[Frequência de Execução]
+smoke: sempre pós-deploy
+regressao: a cada nova versão
+demais tags: conforme necessidade
