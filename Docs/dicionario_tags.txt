@@ -4,6 +4,9 @@ MANUAL COMPLETO DE TAGS PARA TESTES AUTOMATIZADOS
 1. TAGS DE CRITICIDADE
 ----------------------
 
+[Prioridade]
+critico > alta > media > baixa
+
 - critico:    Testes essenciais (falha = bloqueante)
 - alta:       Funcionalidades importantes, mas não bloqueantes
 - media:      Casos menos críticos
@@ -42,13 +45,3 @@ $ robot -i regressaoANDalta tests/
 - Verificação pós-deploy: robot -i smoke tests/
 - Testes completos de login: robot -i iniciarSessaoORfazerLogin tests/
 - Validação de títulos: robot -i tituloPagina tests/
-
-5. LEGENDA COMPLETA
--------------------
-[Prioridade]
-critico > alta > media > baixa
-
-[Frequência de Execução]
-smoke: sempre pós-deploy
-regressao: a cada nova versão
-demais tags: conforme necessidade
